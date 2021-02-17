@@ -9,14 +9,8 @@ on:
       - firmware20
 jobs:
   bootstrap:
-    strategy:
-      matrix:
-        os:
-          - ubuntu-20.04
-          - macos-latest
-
     name: bootstrap
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/setup-python@v2.2.1
         with:
