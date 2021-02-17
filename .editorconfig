@@ -7,6 +7,10 @@ root = true
 indent_style = space
 indent_size = 4
 
+[*.{yaml,yml}]
+indent_style = space
+indent_size = 2
+
 # We recommend you to keep these unchanged
 charset = utf-8
 trim_trailing_whitespace = true

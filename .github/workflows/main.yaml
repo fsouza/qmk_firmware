@@ -1,0 +1,34 @@
+name: Build
+on:
+  push:
+    branches:
+      - firmware20
+
+  pull_request:
+    branches:
+      - firmware20
+jobs:
+  bootstrap:
+    name: bootstrap
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/setup-python@v2.2.1
+        with:
+          python-version: "3.x"
+
+      - name: install qmk with pip
+        run: pip install qmk
+
+      - uses: actions/checkout@v2.3.4
+        with:
+          submodules: 'recursive'
+
+      - run: qmk setup -H $PWD -y
+
+      - name: build keymap
+        run: make moonlander:mcoding
+
+      - uses: actions/upload-artifact@v2.2.2
+        with:
+          name: moonlander_mcoding.bin
+          path: .build/moonlander_mcoding.bin
