@@ -27,3 +27,8 @@ jobs:
 
       - name: build keymap
         run: make moonlander:mcoding
+
+      - uses: actions/upload-artifact@v2.2.2
+        with:
+          name: moonlander_mcoding.bin
+          path: .build/moonlander_mcoding.bin
