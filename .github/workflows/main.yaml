@@ -2,11 +2,11 @@ name: Build
 on:
   push:
     branches:
-      - firmware20
+      - main
 
   pull_request:
     branches:
-      - firmware20
+      - main
 jobs:
   bootstrap:
     name: bootstrap
