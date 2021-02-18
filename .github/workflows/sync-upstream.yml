@@ -38,6 +38,7 @@ jobs:
         uses: peter-evans/create-pull-request@v3.8.2
         with:
           token: ${{ secrets.GH_PAT }}
+          base: main
           branch: upstream-sync
           title: "Sync upstream"
           body: |
