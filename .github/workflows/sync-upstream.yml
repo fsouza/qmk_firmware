@@ -1,3 +1,4 @@
+name: Sync Upstream
 on:
   schedule:
     - cron: "0 10 * * 1"
