@@ -8,8 +8,8 @@ on:
     branches:
       - main
 jobs:
-  bootstrap:
-    name: bootstrap
+  build:
+    name: Build
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/setup-python@v2.2.1
