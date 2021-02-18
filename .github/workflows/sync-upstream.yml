@@ -17,9 +17,6 @@ jobs:
           fetch-depth: 0
           submodules: "recursive"
 
-      - name: checkout temp branch
-        run: git switch -c upstream-sync
-
       - name: Pull upstream changes
         run: |
           git fetch https://github.com/zsa/qmk_firmware.git firmware20
@@ -32,7 +29,6 @@ jobs:
           token: ${{ secrets.GH_PAT }}
           committer: "fsouzabot <fsouzabot@users.noreply.github.com>"
           author: "fsouzabot <fsouzabot@users.noreply.github.com>"
-          base: main
           branch: upstream-sync
           delete-branch: true
           title: "Sync upstream"
