@@ -1,0 +1,49 @@
+on:
+  schedule:
+    - cron: "0 10 * * 1"
+
+  workflow_dispatch:
+
+jobs:
+  sync_with_upstream:
+    runs-on: ubuntu-latest
+    name: Sync main with upstream latest
+
+    steps:
+      - uses: actions/checkout@v2.3.4
+        with:
+          ref: main
+          submodules: "recursive"
+
+      - name: checkout temp branch
+        run: git switch -c upstream-sync
+
+      - name: Pull upstream changes
+        id: sync
+        uses: aormsby/Fork-Sync-With-Upstream-action@v2.3
+        with:
+          git_user: "fsouzabot"
+          git_email: fsouzabot@users.noreply.github.com
+          git_pull_args: "--no-ff"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          upstream_repository: zsa/qmk_firmware
+          upstream_branch: firmware20
+          target_branch: upstream-sync
+
+      - name: open pull request
+        id: cpr
+        if: steps.sync.outputs.has_new_commits
+        uses: peter-evans/create-pull-request@v3.8.2
+        with:
+          token: ${{ secrets.GH_PAT }}
+          branch: upstream-sync
+          title: "Sync upstream"
+          body: |
+            Syncing commits from https://github.com/zsa/qmk_firmware.
+          reviewers: fsouza
+
+      - name: print PR information
+        if: steps.sync.outputs.has_new_commits
+        run: |
+          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
+          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
