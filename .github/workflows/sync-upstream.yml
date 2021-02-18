@@ -21,32 +21,26 @@ jobs:
         run: git switch -c upstream-sync
 
       - name: Pull upstream changes
-        id: sync
-        uses: aormsby/Fork-Sync-With-Upstream-action@v2.3
-        with:
-          git_user: "fsouzabot"
-          git_email: fsouzabot@users.noreply.github.com
-          git_pull_args: "--no-ff"
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          upstream_repository: zsa/qmk_firmware
-          upstream_branch: firmware20
-          target_branch: upstream-sync
+        run: |
+          git fetch https://github.com/zsa/qmk_firmware.git firmware20
+          git merge FETCH_HEAD
 
       - name: open pull request
         id: cpr
-        if: steps.sync.outputs.has_new_commits
-        uses: peter-evans/create-pull-request@v3.8.2
         with:
           token: ${{ secrets.GH_PAT }}
+          committer: "fsouzabot <fsouzabot@users.noreply.github.com>"
+          author: "fsouzabot <fsouzabot@users.noreply.github.com>"
           base: main
           branch: upstream-sync
+          delete-branch: true
           title: "Sync upstream"
           body: |
             Syncing commits from https://github.com/zsa/qmk_firmware.
           reviewers: fsouza
 
       - name: print PR information
-        if: steps.sync.outputs.has_new_commits
+        if: steps.cr.outputs.pull-request-number
         run: |
           echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
           echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
