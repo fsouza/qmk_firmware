@@ -29,7 +29,7 @@ jobs:
           token: ${{ secrets.GH_PAT }}
           committer: "fsouzabot <fsouzabot@users.noreply.github.com>"
           author: "fsouzabot <fsouzabot@users.noreply.github.com>"
-          branch: upstream-sync
+          branch: fsouza/upstream-sync
           delete-branch: true
           title: "Sync upstream"
           body: |
