@@ -17,6 +17,11 @@ jobs:
           fetch-depth: 0
           submodules: "recursive"
 
+      - name: set git config
+        run: |
+          git config user.name fsouzabot
+          git config user.email 'fsouzabot@users.noreply.github.com'
+
       - name: Pull upstream changes
         run: |
           git fetch https://github.com/zsa/qmk_firmware.git firmware20
