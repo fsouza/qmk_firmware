@@ -32,3 +32,4 @@ jobs:
         with:
           name: moonlander_mcoding.bin
           path: .build/moonlander_mcoding.bin
+          retention-days: 3
