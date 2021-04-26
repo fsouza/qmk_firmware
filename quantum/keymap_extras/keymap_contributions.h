@@ -297,67 +297,76 @@
 #define FRCA_33 S(KC_2)
 
 // Icelandic
-#define IS_01 S(KC_DOT)
-#define IS_02 S(KC_COMMA)
-#define IS_03 ALGR(KC_NONUS_BSLASH)
-#define IS_04 S(KC_NONUS_BSLASH)
-#define IS_05 KC_NONUS_BSLASH
-#define IS_06 S(KC_BSLASH)
-#define IS_07 S(KC_QUOTE)
-#define IS_08 S(KC_RBRACKET)
-#define IS_09 S(KC_EQUAL)
-#define IS_10 S(KC_GRAVE)
-#define IS_11 S(KC_0)
-#define IS_12 S(KC_8)
-#define IS_13 S(KC_7)
-#define IS_14 S(KC_6)
-#define IS_15 KC_BSLASH
-#define IS_16 KC_QUOTE
-#define IS_17 KC_RBRACKET
-#define IS_18 KC_EQUAL
-#define IS_19 KC_GRAVE
-#define IS_20 KC_MINUS
-#define IS_21 KC_SCOLON
-#define IS_22 KC_LBRACKET
+#define IS_01 S(KC_DOT) //:
+#define IS_02 S(KC_COMMA) //;
+#define IS_03 ALGR(KC_NONUS_BSLASH) //|
+#define IS_04 S(KC_NONUS_BSLASH) //>
+#define IS_05 KC_NONUS_BSLASH //<
+#define IS_06 S(KC_BSLASH)// *
+#define IS_07 S(KC_QUOTE) //´
+#define IS_08 S(KC_RBRACKET) //?
+#define IS_09 S(KC_EQUAL) //_
+#define IS_10 S(KC_GRAVE) //¨
+#define IS_11 S(KC_0) //=
+#define IS_12 S(KC_8) //(
+#define IS_13 S(KC_7) //°
+#define IS_14 S(KC_6) //&
+#define IS_15 KC_BSLASH //+
+#define IS_16 KC_QUOTE //´
+#define IS_17 KC_RBRACKET //'
+#define IS_18 KC_EQUAL //-
+#define IS_19 KC_GRAVE //°
+#define IS_20 KC_MINUS //ö
+#define IS_21 KC_SCOLON //æ
+#define IS_22 KC_LBRACKET //ð
+#define IS_23 S(KC_9) //)
+#define IS_24 S(KC_2) //"
+#define IS_25 S(KC_MINUS) //Ö
+#define IS_26 S(KC_SLASH) //Þ
+#define IS_27 S(KC_SCOLON) //Æ
+#define IS_28 S(KC_LBRACKET) //Ð
 
 // Spanish LATAM
-#define ES_LA_00 ALGR(KC_MINUS)
-#define ES_LA_01 ALGR(KC_GRAVE) //¬
-#define ES_LA_02 ALGR(KC_Q) //@
-#define ES_LA_03 ALGR(KC_BSLASH) //`
-#define ES_LA_04 ALGR(KC_QUOTE) //^
-#define ES_LA_05 ALGR(KC_RBRACKET) //~
-#define ES_LA_06 S(KC_SCOLON) //Ñ
-#define ES_LA_07 KC_SCOLON //ñ
-#define ES_LA_08 S(KC_SLASH) //_
-#define ES_LA_09 KC_SLASH //-
-#define ES_LA_10 S(KC_DOT) //:
-#define ES_LA_11 KC_DOT //.
-#define ES_LA_12 S(KC_COMMA) //;
-#define ES_LA_13 KC_COMMA //,
-#define ES_LA_14 S(KC_NONUS_BSLASH) //>
-#define ES_LA_15 KC_NONUS_BSLASH //<
-#define ES_LA_16 S(KC_BSLASH) //]
-#define ES_LA_17 KC_BSLASH //}
-#define ES_LA_18 S(KC_QUOTE) //[
-#define ES_LA_19 KC_QUOTE //{
-#define ES_LA_20 S(KC_RBRACKET) //*
-#define ES_LA_21 KC_RBRACKET //+
-#define ES_LA_22 S(KC_LBRACKET) //¨
-#define ES_LA_23 KC_LBRACKET //´
-#define ES_LA_24 S(KC_EQUAL) //¡
-#define ES_LA_25 KC_EQUAL //¿
-#define ES_LA_26 S(KC_MINUS) //?
-#define ES_LA_27 KC_MINUS //'
-#define ES_LA_28 S(KC_0) //=
-#define ES_LA_29 S(KC_9) //(
-#define ES_LA_30 S(KC_8) //(
-#define ES_LA_31 S(KC_7) ///
-#define ES_LA_32 S(KC_6) //&
-#define ES_LA_33 S(KC_5) //%
-#define ES_LA_34 S(KC_4) //$
-#define ES_LA_35 S(KC_3) //#
-#define ES_LA_36 S(KC_2) //"
-#define ES_LA_37 S(KC_1) //!
-#define ES_LA_38 S(KC_GRAVE) //°
-#define ES_LA_39 KC_GRAVE //|
+#define ES_LA_01 ALGR(KC_MINUS)
+#define ES_LA_02 ALGR(KC_GRAVE) //¬
+#define ES_LA_03 ALGR(KC_Q) //@
+#define ES_LA_04 ALGR(KC_BSLASH) //`
+#define ES_LA_05 ALGR(KC_QUOTE) //^
+#define ES_LA_06 ALGR(KC_RBRACKET) //~
+#define ES_LA_07 S(KC_SCOLON) //Ñ
+#define ES_LA_08 KC_SCOLON //ñ
+#define ES_LA_09 S(KC_SLASH) //_
+#define ES_LA_10 KC_SLASH //-
+#define ES_LA_11 S(KC_DOT) //:
+#define ES_LA_12 KC_DOT //.
+#define ES_LA_13 S(KC_COMMA) //;
+#define ES_LA_14 KC_COMMA //,
+#define ES_LA_15 S(KC_NONUS_BSLASH) //>
+#define ES_LA_16 KC_NONUS_BSLASH //<
+#define ES_LA_17 S(KC_BSLASH) //]
+#define ES_LA_18 KC_BSLASH //}
+#define ES_LA_19 S(KC_QUOTE) //[
+#define ES_LA_20 KC_QUOTE //{
+#define ES_LA_21 S(KC_RBRACKET) //*
+#define ES_LA_22 KC_RBRACKET //+
+#define ES_LA_23 S(KC_LBRACKET) //¨
+#define ES_LA_24 KC_LBRACKET //´
+#define ES_LA_25 S(KC_EQUAL) //¡
+#define ES_LA_26 KC_EQUAL //¿
+#define ES_LA_27 S(KC_MINUS) //?
+#define ES_LA_28 KC_MINUS //'
+#define ES_LA_29 S(KC_0) //=
+#define ES_LA_30 S(KC_9) //(
+#define ES_LA_31 S(KC_8) //(
+#define ES_LA_32 S(KC_7) ///
+#define ES_LA_33 S(KC_6) //&
+#define ES_LA_34 S(KC_5) //%
+#define ES_LA_35 S(KC_4) //$
+#define ES_LA_36 S(KC_3) //#
+#define ES_LA_37 S(KC_2) //"
+#define ES_LA_38 S(KC_1) //!
+#define ES_LA_39 S(KC_GRAVE) //°
+#define ES_LA_40 KC_GRAVE //|
+
+// Extra CMS codes
+#define CSA_MOMEG RCTL(S(KC_Q)) //Ω
