@@ -28,7 +28,7 @@ jobs:
           git merge FETCH_HEAD
 
       - name: open pull request
-        uses: peter-evans/create-pull-request@v3.8.2
+        uses: peter-evans/create-pull-request@v3.9.1
         id: cpr
         with:
           token: ${{ secrets.GH_PAT }}
