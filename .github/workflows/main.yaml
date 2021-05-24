@@ -19,10 +19,6 @@ jobs:
       - name: install qmk with pip
         run: pip install qmk
 
-      - name: install additional deps with pip
-        # See https://github.com/clueboard/milc/pull/36
-        run: pip install halo spinners
-
       - uses: actions/checkout@v2.3.4
         with:
           submodules: 'recursive'
