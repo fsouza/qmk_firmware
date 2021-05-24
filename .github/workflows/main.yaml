@@ -16,12 +16,12 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: install python deps
-        run: pip install -r .github/requirements.txt
-
       - uses: actions/checkout@v2.3.4
         with:
           submodules: 'recursive'
+
+      - name: install python deps
+        run: pip install -r .github/requirements.txt
 
       - run: qmk setup -H $PWD -y
 
