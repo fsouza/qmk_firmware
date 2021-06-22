@@ -46,7 +46,7 @@ pyrsistent==0.17.3
     # via jsonschema
 pyusb==1.1.1
     # via qmk
-qmk==0.0.51
+qmk==0.0.52
     # via -r requirements.in
 setuptools-scm==6.0.1
     # via dotty-dict
