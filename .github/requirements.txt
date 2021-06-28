@@ -5,23 +5,35 @@
 #    pip-compile .github/requirements.in
 #
 appdirs==1.4.4
-    # via milc
+    # via
+    #   milc
+    #   qmk
 argcomplete==1.12.3
-    # via milc
+    # via
+    #   milc
+    #   qmk
 attrs==21.2.0
-    # via jsonschema
+    # via
+    #   jsonschema
+    #   qmk
 colorama==0.4.4
     # via
     #   halo
+    #   log-symbols
     #   milc
+    #   qmk
 coverage==5.5
-    # via nose2
+    # via
+    #   nose2
+    #   qmk
 dotty-dict==1.3.0
     # via qmk
 flake8==3.9.2
     # via qmk
 halo==0.0.31
-    # via milc
+    # via
+    #   milc
+    #   qmk
 hid==1.0.4
     # via qmk
 hjson==3.0.2
@@ -29,24 +41,34 @@ hjson==3.0.2
 jsonschema==3.2.0
     # via qmk
 log-symbols==0.0.14
-    # via halo
+    # via
+    #   halo
+    #   qmk
 mccabe==0.6.1
-    # via flake8
-milc==1.4.1
+    # via
+    #   flake8
+    #   qmk
+milc==1.4.2
     # via qmk
 nose2==0.10.0
     # via qmk
 pycodestyle==2.7.0
-    # via flake8
+    # via
+    #   flake8
+    #   qmk
 pyflakes==2.3.1
-    # via flake8
+    # via
+    #   flake8
+    #   qmk
 pygments==2.9.0
     # via qmk
 pyrsistent==0.17.3
-    # via jsonschema
+    # via
+    #   jsonschema
+    #   qmk
 pyusb==1.1.1
     # via qmk
-qmk==0.0.52
+qmk==0.1.0
     # via -r requirements.in
 setuptools-scm==6.0.1
     # via dotty-dict
@@ -55,12 +77,16 @@ six==1.16.0
     #   halo
     #   jsonschema
     #   nose2
+    #   qmk
 spinners==0.0.24
     # via
     #   halo
     #   milc
+    #   qmk
 termcolor==1.1.0
-    # via halo
+    # via
+    #   halo
+    #   qmk
 yapf==0.31.0
     # via qmk
 
