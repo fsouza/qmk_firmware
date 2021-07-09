@@ -62,13 +62,13 @@ pyflakes==2.3.1
     #   qmk
 pygments==2.9.0
     # via qmk
-pyrsistent==0.17.3
+pyrsistent==0.18.0
     # via
     #   jsonschema
     #   qmk
-pyusb==1.1.1
+pyusb==1.2.0
     # via qmk
-qmk==0.1.0
+qmk==0.1.1
     # via -r requirements.in
 setuptools-scm==6.0.1
     # via dotty-dict
