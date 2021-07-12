@@ -26,8 +26,6 @@ coverage==5.5
     # via
     #   nose2
     #   qmk
-dotty-dict==1.3.0
-    # via qmk
 flake8==3.9.2
     # via qmk
 halo==0.0.31
@@ -66,12 +64,12 @@ pyrsistent==0.18.0
     # via
     #   jsonschema
     #   qmk
-pyusb==1.2.0
+pyusb==1.2.1
     # via qmk
-qmk==0.1.1
+qmk==0.2.0
     # via -r requirements.in
-setuptools-scm==6.0.1
-    # via dotty-dict
+qmk-dotty-dict==1.3.0.post1
+    # via qmk
 six==1.16.0
     # via
     #   halo
