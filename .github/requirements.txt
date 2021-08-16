@@ -44,7 +44,7 @@ pyrsistent==0.18.0
     # via qmk
 pyusb==1.2.1
     # via qmk
-qmk==0.3.3
+qmk==0.3.5
     # via -r requirements.in
 six==1.16.0
     # via
