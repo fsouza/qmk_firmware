@@ -20,11 +20,13 @@ hid==1.0.4
     # via qmk
 hjson==3.0.2
     # via qmk
-jsonschema==3.2.0
+jsonschema==4.5.1
     # via qmk
 log-symbols==0.0.14
     # via halo
 milc==1.5.0
+    # via qmk
+pillow==9.1.1
     # via qmk
 pygments==2.10.0
     # via qmk
@@ -32,14 +34,12 @@ pyrsistent==0.18.0
     # via jsonschema
 pyusb==1.2.1
     # via qmk
-qmk==1.0.0
+qmk==1.1.0
     # via -r requirements.in
 qmk-dotty-dict==1.3.0.post1
     # via qmk
 six==1.16.0
-    # via
-    #   halo
-    #   jsonschema
+    # via halo
 spinners==0.0.24
     # via
     #   halo
