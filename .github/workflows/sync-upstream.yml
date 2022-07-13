@@ -25,7 +25,7 @@ jobs:
 
       - name: Pull upstream changes
         run: |
-          git fetch https://github.com/zsa/qmk_firmware.git firmware20
+          git fetch https://github.com/zsa/qmk_firmware.git firmware21
           git merge FETCH_HEAD
 
       - name: open pull request
