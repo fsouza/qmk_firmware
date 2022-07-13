@@ -49,7 +49,7 @@
 #    include <hal.h>
 #endif
 #ifdef WEBUSB_ENABLE
-#include "webusb_descriptor.h"
+#     include "webusb_descriptor.h"
 #endif
 
 /*
@@ -144,6 +144,13 @@ typedef struct {
     USB_HID_Descriptor_HID_t   Joystick_HID;
     USB_Descriptor_Endpoint_t  Joystick_INEndpoint;
 #endif
+
+#if defined(DIGITIZER_ENABLE) && !defined(DIGITIZER_SHARED_EP)
+    // Digitizer HID Interface
+    USB_Descriptor_Interface_t Digitizer_Interface;
+    USB_HID_Descriptor_HID_t   Digitizer_HID;
+    USB_Descriptor_Endpoint_t  Digitizer_INEndpoint;
+#endif
 } USB_Descriptor_Configuration_t;
 
 /*
@@ -193,6 +200,10 @@ enum usb_interfaces {
 #if defined(JOYSTICK_ENABLE)
     JOYSTICK_INTERFACE,
 #endif
+
+#if defined(DIGITIZER_ENABLE) && !defined(DIGITIZER_SHARED_EP)
+    DIGITIZER_INTERFACE,
+#endif
     TOTAL_INTERFACES
 };
 
@@ -202,7 +213,7 @@ enum usb_interfaces {
  * Endpoint numbers
  */
 enum usb_endpoints {
-    __unused_epnum__ = NEXT_EPNUM,  // Endpoint numbering starts at 1
+    __unused_epnum__ = NEXT_EPNUM, // Endpoint numbering starts at 1
 
 #ifndef KEYBOARD_SHARED_EP
     KEYBOARD_IN_EPNUM = NEXT_EPNUM,
@@ -239,7 +250,7 @@ enum usb_endpoints {
 #        if STM32_USB_USE_OTG1
 #            define CONSOLE_OUT_EPNUM CONSOLE_IN_EPNUM
 #        else
-    CONSOLE_OUT_EPNUM = NEXT_EPNUM,
+    CONSOLE_OUT_EPNUM   = NEXT_EPNUM,
 #        endif
 #    else
 #        define CONSOLE_OUT_EPNUM CONSOLE_IN_EPNUM
@@ -271,12 +282,26 @@ enum usb_endpoints {
 #    define WEBUSB_IN_EPADDR         (ENDPOINT_DIR_IN  | WEBUSB_IN_EPNUM)
 #    define WEBUSB_OUT_EPADDR        (ENDPOINT_DIR_OUT | WEBUSB_OUT_EPNUM)
 #endif
+
 #ifdef JOYSTICK_ENABLE
     JOYSTICK_IN_EPNUM = NEXT_EPNUM,
 #    if STM32_USB_USE_OTG1
     JOYSTICK_OUT_EPNUM = JOYSTICK_IN_EPNUM,
 #    else
     JOYSTICK_OUT_EPNUM    = NEXT_EPNUM,
+#    endif
+#endif
+
+#ifdef DIGITIZER_ENABLE
+#    if !defined(DIGITIZER_SHARED_EP)
+    DIGITIZER_IN_EPNUM = NEXT_EPNUM,
+#        if STM32_USB_USE_OTG1
+    DIGITIZER_OUT_EPNUM = DIGITIZER_IN_EPNUM,
+#        else
+    DIGITIZER_OUT_EPNUM = NEXT_EPNUM,
+#        endif
+#    else
+#        define DIGITIZER_IN_EPNUM SHARED_IN_EPNUM
 #    endif
 #endif
 };
@@ -305,5 +330,6 @@ enum usb_endpoints {
 #define CDC_EPSIZE 16
 #define WEBUSB_EPSIZE 64
 #define JOYSTICK_EPSIZE 8
+#define DIGITIZER_EPSIZE 8
 
 uint16_t get_usb_descriptor(const uint16_t wValue, const uint16_t wIndex, const void** const DescriptorAddress);

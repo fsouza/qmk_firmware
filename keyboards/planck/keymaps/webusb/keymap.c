@@ -9,10 +9,10 @@
 #include "keymap_spanish.h"
 #include "keymap_hungarian.h"
 #include "keymap_swedish.h"
-#include "keymap_br_abnt2.h"
+#include "keymap_brazilian_abnt2.h"
 #include "keymap_canadian_multilingual.h"
-#include "keymap_german_ch.h"
-#include "keymap_jp.h"
+#include "keymap_swiss_de.h"
+#include "keymap_japanese.h"
 
 #define KC_MAC_UNDO LGUI(KC_Z)
 #define KC_MAC_CUT LGUI(KC_X)
@@ -68,7 +68,7 @@ uint16_t muse_counter = 0;
 uint8_t muse_offset = 70;
 uint16_t muse_tempo = 50;
 
-void encoder_update(bool clockwise) {
+bool encoder_update_user(uint8_t index, bool clockwise) {
   if (muse_mode) {
     if (IS_LAYER_ON(_RAISE)) {
       if (clockwise) {
@@ -102,6 +102,7 @@ void encoder_update(bool clockwise) {
 #endif
     }
   }
+  return false;
 }
 
 void matrix_scan_user(void) {
