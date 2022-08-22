@@ -14,6 +14,8 @@ colorama==0.4.4
     # via
     #   halo
     #   milc
+dotty-dict==1.3.1
+    # via qmk
 halo==0.0.31
     # via milc
 hid==1.0.4
@@ -32,12 +34,12 @@ pygments==2.10.0
     # via qmk
 pyrsistent==0.18.0
     # via jsonschema
+pyserial==3.5
+    # via qmk
 pyusb==1.2.1
     # via qmk
-qmk==1.1.0
+qmk==1.1.1
     # via -r requirements.in
-qmk-dotty-dict==1.3.0.post1
-    # via qmk
 six==1.16.0
     # via halo
 spinners==0.0.24
