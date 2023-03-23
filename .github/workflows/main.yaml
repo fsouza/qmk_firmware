@@ -14,11 +14,11 @@ jobs:
     name: Build
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/setup-python@v4.5.0
+      - uses: actions/setup-python@v4
         with:
           python-version: "3.10.x"
 
-      - uses: actions/checkout@v3.4.0
+      - uses: actions/checkout@v3
         with:
           submodules: "recursive"
 
@@ -33,7 +33,7 @@ jobs:
       - name: build keymap
         run: make moonlander:mcoding
 
-      - uses: actions/upload-artifact@v3.1.2
+      - uses: actions/upload-artifact@v3
         with:
           name: moonlander_mcoding.bin
           path: .build/moonlander_mcoding.bin
