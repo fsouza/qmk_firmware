@@ -16,25 +16,18 @@ jobs:
     steps:
       - uses: actions/setup-python@v4.6.1
         with:
-          python-version: "3.10.x"
+          python-version: "3.11.x"
 
       - uses: actions/checkout@v3.5.2
-        with:
-          submodules: "recursive"
 
       - name: install CI python deps
         run: pip install -r .github/requirements.txt
 
-      - name: install repo python deps
-        run: pip install -r requirements.txt
-
-      - run: qmk setup -H $PWD -y
-
       - name: build keymap
-        run: make moonlander:mcoding
+        run: make build
 
       - uses: actions/upload-artifact@v3.1.2
         with:
           name: moonlander_mcoding.bin
-          path: .build/moonlander_mcoding.bin
+          path: qmk_firmware/.build/moonlander_mcoding.bin
           retention-days: 3
