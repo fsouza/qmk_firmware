@@ -3,21 +3,8 @@
 set -euo pipefail
 
 MY_DIR=$(cd "$(dirname "${0}")" && pwd -P)
-GIT_DIR=${MY_DIR}/qmk_firmware
-QMK_REPO=zsa/qmk_firmware
-GIT_REPO=https://github.com/${QMK_REPO}.git
+GIT_DIR=${MY_DIR}/zsa_firmware
 GIT_BRANCH=firmware22
-
-function ensure_git_repo() {
-    if [ -d "${GIT_DIR}" ]; then
-        git -C "${GIT_DIR}" fetch origin
-    else
-        git clone -b "${GIT_BRANCH}" "${GIT_REPO}" "${GIT_DIR}"
-    fi
-
-    git -C "${GIT_DIR}" checkout origin/"${GIT_BRANCH}"
-    make -C "${GIT_DIR}" git-submodules
-}
 
 function qmk_setup() {
     pushd "${GIT_DIR}"
@@ -26,7 +13,6 @@ function qmk_setup() {
 }
 
 function main() {
-    ensure_git_repo
     qmk_setup
 }
 

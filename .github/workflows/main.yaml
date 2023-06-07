@@ -19,6 +19,10 @@ jobs:
           python-version: "3.11.x"
 
       - uses: actions/checkout@v3.5.2
+        with:
+          # intentionally don't set it to "recursive" as zsa's submodules are
+          # managed via their Makefile.
+          submodules: true
 
       - name: install CI python deps
         run: pip install -r .github/requirements.txt
@@ -29,5 +33,5 @@ jobs:
       - uses: actions/upload-artifact@v3.1.2
         with:
           name: moonlander_mcoding.bin
-          path: qmk_firmware/.build/moonlander_mcoding.bin
+          path: zsa_firmware/.build/moonlander_mcoding.bin
           retention-days: 3
