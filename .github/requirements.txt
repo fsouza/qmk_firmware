@@ -13,6 +13,7 @@ attrs==23.1.0
 colorama==0.4.6
     # via
     #   halo
+    #   log-symbols
     #   milc
 dotty-dict==1.3.1
     # via qmk
@@ -28,7 +29,7 @@ log-symbols==0.0.14
     # via halo
 milc==1.6.6
     # via qmk
-pillow==9.5.0
+pillow==10.0.1
     # via qmk
 pygments==2.15.1
     # via qmk
