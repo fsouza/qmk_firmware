@@ -29,7 +29,7 @@ log-symbols==0.0.14
     # via halo
 milc==1.6.6
     # via qmk
-pillow==10.0.1
+pillow==10.2.0
     # via qmk
 pygments==2.15.1
     # via qmk
