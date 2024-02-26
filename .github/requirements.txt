@@ -27,7 +27,7 @@ jsonschema==4.17.3
     # via qmk
 log-symbols==0.0.14
     # via halo
-milc==1.6.6
+milc==1.8.0
     # via qmk
 pillow==10.2.0
     # via qmk
@@ -39,7 +39,7 @@ pyserial==3.5
     # via qmk
 pyusb==1.2.1
     # via qmk
-qmk==1.1.2
+qmk==1.1.5
     # via -r requirements.in
 six==1.16.0
     # via halo
@@ -49,6 +49,8 @@ spinners==0.0.24
     #   milc
 termcolor==2.3.0
     # via halo
+types-colorama==0.4.15.20240205
+    # via milc
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
