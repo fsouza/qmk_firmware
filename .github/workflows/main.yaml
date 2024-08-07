@@ -32,7 +32,7 @@ jobs:
       - name: build keymap
         run: make build
 
-      - uses: actions/upload-artifact@v4.3.5
+      - uses: actions/upload-artifact@v4.3.6
         with:
           name: moonlander_mcoding.bin
           path: zsa_firmware/.build/moonlander_mcoding.bin
