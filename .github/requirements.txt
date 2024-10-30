@@ -4,8 +4,6 @@
 #
 #    pip-compile
 #
-appdirs==1.4.4
-    # via milc
 argcomplete==3.0.8
     # via milc
 attrs==23.1.0
@@ -27,10 +25,12 @@ jsonschema==4.17.3
     # via qmk
 log-symbols==0.0.14
     # via halo
-milc==1.8.0
+milc==1.9.0
     # via qmk
 pillow==10.3.0
     # via qmk
+platformdirs==4.3.6
+    # via milc
 pygments==2.15.1
     # via qmk
 pyrsistent==0.19.3
@@ -39,7 +39,7 @@ pyserial==3.5
     # via qmk
 pyusb==1.2.1
     # via qmk
-qmk==1.1.5
+qmk==1.1.6
     # via -r requirements.in
 six==1.16.0
     # via halo
