@@ -1,6 +1,5 @@
 #include QMK_KEYBOARD_H
 #include "keymap_bepo.h"
-#include "keymap_contributions.h"
 #include "keymap_us_international.h"
 #include "version.h"
 
