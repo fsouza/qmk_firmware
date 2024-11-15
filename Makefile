@@ -2,7 +2,7 @@ QMK_REPO ?= zsa/qmk_firmware
 QMK_BRANCH ?= firmware22
 
 .PHONY: build
-build: zsa_firmware/keyboards/moonlander/keymaps/mcoding  zsa_firmware/.build/moonlander_mcoding.bin
+build: zsa_firmware/keyboards/zsa/moonlander/keymaps/mcoding  zsa_firmware/.build/moonlander_mcoding.bin
 
 .PHONY: qmk_setup
 qmk_setup:
@@ -14,4 +14,4 @@ zsa_firmware/keyboards/zsa/moonlander/keymaps/mcoding: mcoding qmk_setup
 	cp -r "$<" "$@"
 
 zsa_firmware/.build/moonlander_mcoding.bin: mcoding qmk_setup
-	make -C zsa_firmware moonlander:mcoding
+	make -C zsa_firmware zsa/moonlander:mcoding
