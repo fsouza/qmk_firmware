@@ -9,7 +9,7 @@ qmk_setup:
 	make -C zsa_firmware git-submodules
 	cd zsa_firmware && qmk setup $(QMK_REPO) -b $(QMK_BRANCH) -y
 
-zsa_firmware/keyboards/moonlander/keymaps/mcoding: mcoding qmk_setup
+zsa_firmware/keyboards/zsa/moonlander/keymaps/mcoding: mcoding qmk_setup
 	rm -rf "$@"
 	cp -r "$<" "$@"
 
