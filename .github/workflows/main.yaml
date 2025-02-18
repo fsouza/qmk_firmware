@@ -20,14 +20,15 @@ jobs:
           # managed via their Makefile.
           submodules: true
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5.2.2
+
       - uses: actions/setup-python@v5.3.0
         with:
           python-version: "3.11.x"
-          cache: pip
-          cache-dependency-path: .github/requirements.txt
 
       - name: install CI python deps
-        run: pip install -r .github/requirements.txt
+        run: uv pip sync --system .github/requirements.txt
 
       - name: build keymap
         run: make build
