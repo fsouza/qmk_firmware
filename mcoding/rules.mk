@@ -7,4 +7,3 @@ AUDIO_ENABLE = no
 # RGB_MATRIX_ENABLE = no
 WEBUSB_ENABLE = no
 ORYX_ENABLE = no
-SRC = matrix.c
