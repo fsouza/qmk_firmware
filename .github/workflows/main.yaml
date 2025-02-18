@@ -15,10 +15,6 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v4.2.2
-        with:
-          # intentionally don't set it to "recursive" as zsa's submodules are
-          # managed via their Makefile.
-          submodules: true
 
       - uses: actions/setup-python@v5.3.0
         with:
