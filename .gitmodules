@@ -1,3 +1,4 @@
 [submodule "zsa_firmware"]
 	path = zsa_firmware
 	url = https://github.com/zsa/qmk_firmware.git
+        branch = firmware24
