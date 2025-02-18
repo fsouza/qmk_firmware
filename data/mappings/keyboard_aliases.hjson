@@ -1,0 +1,41 @@
+{
+    // Format for each entry:
+    // "<alias>": {
+    //     "target": "<keyboard_folder>"
+    // }
+    //
+
+    /* This list of aliases is for testing purposes -- ensures "linked list" recursive traversal works correctly. */
+    "_test_a": { "target": "_test_b" },
+    "_test_b": { "target": "_test_c" },
+    "_test_c": { "target": "zsa/planck_ez/base" },
+
+    /* The main list of aliases for moved keyboards within QMK. */
+    "ergodox_ez": {
+        "target": "zsa/ergodox_ez/m32u4/base"
+    },
+    "ergodox_ez/base": {
+        "target": "zsa/ergodox_ez/m32u4/base"
+    },
+    "ergodox_ez/glow": {
+        "target": "zsa/ergodox_ez/m32u4/glow"
+    },
+    "ergodox_ez/shine": {
+        "target": "zsa/ergodox_ez/m32u4/shine"
+    },
+    "moonlander": {
+        "target": "zsa/moonlander"
+    },
+    "planck/ez": {
+        "target": "zsa/planck_ez/base"
+    },
+    "planck/ez/base": {
+        "target": "zsa/planck_ez/base"
+    },
+    "planck/ez/glow": {
+        "target": "zsa/planck_ez/glow"
+    },
+    "voyager": {
+        "target": "zsa/voyager"
+    }
+}
