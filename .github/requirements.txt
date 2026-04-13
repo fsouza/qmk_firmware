@@ -29,7 +29,7 @@ log-symbols==0.0.14
     # via halo
 milc==1.9.1
     # via qmk
-pillow==12.1.1
+pillow==12.2.0
     # via qmk
 platformdirs==4.3.6
     # via
